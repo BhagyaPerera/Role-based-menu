@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import LoginPage from './components/pages/LoginPage'
+import Navbar from './components/pages/Navbar';
+
+
+import './App.css'
+
+export default function App() {
+    return (
+        <Router>
+            <div>
+                <Switch>
+                   
+                    <Route exact path="/" component={ LoginPage } />
+                    <Route path="/navbar" component={ Navbar } />
+                </Switch>
+                <Footer />
+            </div>
+        </Router>
+    )
 }
 
-export default App;
+const Footer = () => {
+    return (
+        <p className="text-center" style={ FooterStyle }>Designed & coded by <a href="https://izemspot.netlify.com" target="_blank" rel="noopener noreferrer">IZEMSPOT</a></p>
+    )
+}
+
+const FooterStyle = {
+    background: "#222",
+    fontSize: ".8rem",
+    color: "#fff",
+    position: "absolute",
+    bottom: 0,
+    padding: "1rem",
+    margin: 0,
+    width: "100%",
+    opacity: ".5"
+}
