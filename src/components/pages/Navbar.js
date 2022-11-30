@@ -3,7 +3,6 @@ import React from 'react';
 export default function Navigationbar({MenuItems}){
 
 	  return(
-
 	   <nav>
 		<label>User</label><br/>
 		<ul>
